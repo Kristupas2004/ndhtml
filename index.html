@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Išmanusis laikrodis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="watch-container">
+    <div class="tabs">
+      <button onclick="showTab('time')">Laikrodis</button>
+      <button onclick="showTab('date')">Data</button>
+      <button onclick="showTab('stopwatch')">Chronometras</button>
+    </div>
+    <div class="content">
+      <div id="time" class="tab-content">
+        <h2>Laikrodis</h2>
+        <h1 id="current-time">00:00:00</h1>
+      </div>
+      <div id="date" class="tab-content hidden">
+        <h2>Data</h2>
+        <p id="current-date">YYYY-MM-DD</p>
+      </div>
+      <div id="stopwatch" class="tab-content hidden">
+        <h2>Chronometras</h2>
+        <p id="stopwatch-display">00:00:00</p>
+        <button onclick="startStopwatch()">Pradėti</button>
+        <button onclick="stopStopwatch()">Sustabdyti</button>
+        <button onclick="resetStopwatch()">Atstatyti</button>
+      </div>
+    </div>
+  </div>
+  <script src="functions.js"></script>
+</body>
+</html>
