@@ -21,9 +21,9 @@ function updateTime() {
   function startStopwatch() {
     if (stopwatchInterval) return;
     stopwatchInterval = setInterval(() => {
-      stopwatchTime++;
+      stopwatchTime += 10;
       displayStopwatchTime();
-    }, 1000);
+    }, 10);
   }
   
   function stopStopwatch() {
@@ -37,10 +37,11 @@ function updateTime() {
   }
   
   function displayStopwatchTime() {
-    const hours = Math.floor(stopwatchTime / 3600).toString().padStart(2, '0');
-    const minutes = Math.floor((stopwatchTime % 3600) / 60).toString().padStart(2, '0');
-    const seconds = (stopwatchTime % 60).toString().padStart(2, '0');
-    document.getElementById('stopwatch-display').textContent = `${hours}:${minutes}:${seconds}`;
+    const hours = Math.floor(stopwatchTime / 3600000).toString().padStart(2, '0');
+    const minutes = Math.floor((stopwatchTime % 3600000) / 60000).toString().padStart(2, '0');
+    const seconds = Math.floor((stopwatchTime % 60000) / 1000).toString().padStart(2, '0');
+    const milliseconds = (stopwatchTime % 1000).toString().padStart(3, '0');
+    document.getElementById('stopwatch-display').textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
   }
   
   // Tabų perjungimas
